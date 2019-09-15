@@ -13,69 +13,57 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request, \Swift_Mailer $mailer)
     {
-        $students = array(
-            "Tours - Angular" => [
-                "Loubna-Bouam_student2018@wilder.school" => "bouamloubna5@gmail.com",
-                "Mustapha-Loda_student2018@wilder.school" => "loda29@gmail.com",
-                "Jonathan-Begot_student2018@wilder.school" => "jonat.begot@laposte.net",
-                "Benoit-Cordier_student2018@wilder.school" => "benoitcordier@live.co.uk",
-                "Johann-Teyssandier_student2018@wilder.school" => "ordi_com@hotmail.fr",
-                "Emilie-Huet_student2018@wilder.school" => "hemilie94@gmail.com",
-                "Victor-Marie_student2018@wilder.school" => "victor.s.marie@gmail.com",
-                "Killian-Rhelimi_student2018@wilder.school" => "kiloups@gmail.com",
-                "Philippe-Roche-Oroval_student2018@wilder.school" => "aphilthedoc@gmail.com",
-                "Valentin-Berruer_student2018@wilder.school" => "valb37@icloud.com",
-                "Pierre-Hugo-Meillot_student2018@wilder.school" => "ph.meillot@gmail.com",
-                "Yuniss-Kordjee_student2018@wilder.school" => "yuniss.kordjee@live.fr",
-                "Alexandre-Gauthier_student2018@wilder.school" => "alex.gauthier41@gmail.com"
-            ], "Nantes - React" => [
-                "Emilie-Le-Bihan_student2018@wilder.school" => "lebihan.emilie@yahoo.fr",
-                "Olivier-Bretaud_student2018@wilder.school" => "olivierbretaud@hotmail.fr",
-                "Tiphaine-Deswarte_student2018@wilder.school" => "tiphaine.deswarte@live.fr",
-                "Antoine-Nourris_student2018@wilder.school" => "nourrisantoine44@gmail.com",
-                "Matthieu-Petit_student2018@wilder.school" => "matthieuwpetit@gmail.com",
-                "Marion-Touja_student2018@wilder.school" => "marion.touja@gmail.com",
-                "Geoffroy-Lauger_student2018@wilder.school" => "lauger.geoffroy@gmail.com",
-                "Maeva-Duran_student2018@wilder.school" => "maeva.v.duran@gmail.com"
-            ], "Bruxelles - React" => [
-                "Thomas-Lambert_student2018@wilder.school" => "lambertthomas10@gmail.com",
-                "Arthur-Thill_student2018@wilder.school" => "arthur.thill17.at@gmail.com",
-                "Olivier-Sohy_student2018@wilder.school" => "gorgobox@gmail.com",
-                "Hanaa-Oulad_student2018@wilder.school" => "ouladch@gmail.com",
-                "Anja-Razafitrimo_student2018@wilder.school" => "arazafitrimo@gmail.com",
-                "Joachim-Bertrand_student2018@wilder.school" => "j.bertrand0032@gmail.com",
-                "Cristina-Gonzalez_student2018@wilder.school" => "cgonzalezescallon@gmail.com",
-                "Audrey-Mertens-De-Wilmars_student2018@wilder.school" => "audrey.mertens92@gmail.com",
-                "Carolina-Tirado_student2018@wilder.school" => "carolinatirado92@gmail.com",
-                "Ayoub-Ochan_student2018@wilder.school" => "ayoub.ochan13@gmail.com",
-                "Celestine-Bonaert_student2018@wilder.school" => "celestine.bonaert@gmail.com",
-                "Audrey-Masamba_student2018@wilder.school" => "masambaaudrey1@gmail.com",
-                "Felix-Bonaert_student2018@wilder.school" => "bonaert.felix@gmail.com",
-                "Cyril-Pradal_student2018@wilder.school" => "pradal.cyril@gmail.com"
-//            ], "last" => [
-//                "Florian_Grandjean@wilder.school" => "florian.pdf@gmail.com"
-            ]
-        );
+        $students = [
+            ["Abderaouf_Sahraoui_student2019@wilder.school","sahraoui.abderaouf@gmail.com"],
+            ["Yassine_Skiba_student2019@wilder.school","yassine.skiba@gmail.com"],
+            ["Marie-Helene_Delteil_student2019@wilder.school","mariehelene.delteil@gmail.com"],
+            ["Genia-Adrada_Rajzner_student2019@wilder.school","geniaadrada76@gmail.com"],
+            ["Marilou_Prevoteau_student2019@wilder.school","marilou.prevoteau@gmail.com"],
+            ["Sandrine_Arene_student2019@wilder.school","sandrajoe86@yahoo.fr"],
+            ["Vanouna_Grava_student2019@wilder.school","grava.vanouna@gmail.com"],
+            ["Jorys_Bensch_student2019@wilder.school","jorys.bensch@gmail.com"],
+            ["Julien_Armentia_student2019@wilder.school","julien.armentia@laposte.net"],
+            ["Edwin_Beledu_student2019@wilder.school","beleduedwin@yahoo.fr"],
+            ["Laetitia_Bourgois_student2019@wilder.school","bourgois.laetitia@gmail.com"],
+            ["Eddy_Lafond_student2019@wilder.school","eddy.lafond@gmail.com"],
+            ["Veronique_Pichon_student2019@wilder.school","vero33.pichon@free.fr"],
+            ["Valerian_Michelot_student2019@wilder.school","valerianpro@hotmail.com"],
+            ["Yannis_Babin_student2019@wilder.school","yannis@athanyl.net"],
+            ["Benjamin_Camino_student2019@wilder.school","camino.benjamin@gmail.com"],
+            ["Valentin_Cluzan_student2019@wilder.school","valentin.cluzan33@gmail.com"],
+            ["Alexandra_Hilary_student2019@wilder.school","punkydesbois@gmail.com"],
+            ["Clement_Lecomte_student2019@wilder.school","lecomte.cle@gmail.com"],
+            ["Jean-Christophe_Fauquenot_student2019@wilder.school","jcfauquenot@gmail.com"],
+            ["Frederic_Ribot_student2019@wilder.school","frederic.ribot.pro@gmail.com"],
+            ["Sandy_Carrere_student2019@wilder.school","sandycarrere@gmail.com"],
+            ["Clement_Lopez_student2019@wilder.school","lopez.clmnt@gmail.com"],
+            ["Jerome_Colin_student2019@wilder.school","jerome.colin64100@gmail.com"],
+            ["Valerie_Burguet_student2019@wilder.school","valerie.burguet@gmail.com"],
+            ["Quentin_Da-Silva_student2019@wilder.school","dasilva.quentin33@gmail.com"],
+            ["Gaetan_Pennanech_student2019@wilder.school","pennanech.gaetan@gmail.com"],
+            ["Arthur_Lagadec_student2019@wilder.school","arthurlagadec64@gmail.com"]
+        ];
 
-        foreach ($students as $crew){
-            foreach ($crew as $mailWilder => $currentEmail){
-                $message = (new \Swift_Message('Ton adresse email Wild'))
-                    ->setFrom([$this->getParameter('mailer_user') => 'Florian - Wild Code School'])
-                    ->setTo($currentEmail)
-                    ->setBody(
-                        $this->renderView(
-                        // app/Resources/views/Emails/registration.html.twig
-                            'email.htlm.twig',
-                            array('mailWilder' => $mailWilder, 'current' => $currentEmail)
-                        ),
-                        'text/html'
-                    )
+        foreach ($students as $student){
 
-                ;
+            $message = (new \Swift_Message('Your Wild adress'))
+                ->setFrom([$this->getParameter('mailer_user') => 'Florian Grandjean'])
+                ->setTo($student[1])
+                ->setBody(
+                    $this->renderView(
+                    // app/Resources/views/Emails/registration.html.twig
+                        'email.htlm.twig',
+                        array('mailWilder' => $student[0], 'current' => $student[1])
+                    ),
+                    'text/html'
+                )
 
-                $mailer->send($message);
-                sleep(2);
-            }
+            ;
+
+            $mailer->send($message);
+            sleep(2);
+
+            echo $student[0] . ' ' . $student[1] . "<br>";
         }
 
         // replace this example code with whatever you need
